@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0432A95F-E338-4AF2-ABBF-85DA46FBDE83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Deportivo</RootNamespace>
+    <AssemblyName>Deportivo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Deportivo.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\MarcaService.cs" />
+    <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\ProductoService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\MarcaDao.cs" />
+    <Compile Include="DataAccessLayer\PerfilDao.cs" />
+    <Compile Include="DataAccessLayer\ProductoDao.cs" />
+    <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="Entities\Marca.cs" />
+    <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="Entities\Producto.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios\frmABMUsuario.Designer.cs">
+      <DependentUpon>frmABMUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Ventas\frmABMProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Ventas\frmABMProducto.Designer.cs">
+      <DependentUpon>frmABMProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Ventas\frmConsultaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Ventas\frmConsultaProductos.designer.cs">
+      <DependentUpon>frmConsultaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Usuarios\frmABMUsuario.resx">
+      <DependentUpon>frmABMUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Usuarios\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Ventas\frmABMProducto.resx">
+      <DependentUpon>frmABMProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Ventas\frmConsultaProductos.resx">
+      <DependentUpon>frmConsultaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\agregar.png" />
+    <None Include="Resources\user_log4.png" />
+    <None Include="Resources\user_log3.png" />
+    <None Include="Resources\user_log2.png" />
+    <None Include="Resources\user_log1.png" />
+    <None Include="Resources\agregar1.png" />
+    <None Include="Resources\agregar2.png" />
+    <None Include="Resources\agregar3.png" />
+    <None Include="Resources\agregar4.png" />
+    <None Include="Resources\agregar5.png" />
+    <Content Include="Resources\BUSCAR01.bmp" />
+    <None Include="Resources\BUSCAR011.bmp" />
+    <None Include="Resources\BUSCAR012.bmp" />
+    <None Include="Resources\BUSCAR013.bmp" />
+    <None Include="Resources\BUSCAR014.bmp" />
+    <None Include="Resources\BUSCAR015.bmp" />
+    <Content Include="Resources\cabecera.png" />
+    <None Include="Resources\cabecera1.png" />
+    <None Include="Resources\cabecera2.png" />
+    <None Include="Resources\cabecera3.png" />
+    <None Include="Resources\cabecera4.png" />
+    <None Include="Resources\cabecera5.png" />
+    <Content Include="Resources\cerrarBug.png" />
+    <None Include="Resources\cerrarBug1.png" />
+    <None Include="Resources\cerrarBug2.png" />
+    <None Include="Resources\cerrarBug3.png" />
+    <None Include="Resources\cerrarBug4.png" />
+    <Content Include="Resources\comentar.png" />
+    <None Include="Resources\comentar1.png" />
+    <None Include="Resources\comentar2.png" />
+    <None Include="Resources\comentar3.png" />
+    <None Include="Resources\comentar4.png" />
+    <Content Include="Resources\editar.png" />
+    <None Include="Resources\editar1.png" />
+    <None Include="Resources\editar2.png" />
+    <None Include="Resources\editar3.png" />
+    <None Include="Resources\editar4.png" />
+    <Content Include="Resources\eliminar.png" />
+    <None Include="Resources\eliminar1.png" />
+    <None Include="Resources\eliminar2.png" />
+    <None Include="Resources\eliminar3.png" />
+    <None Include="Resources\eliminar4.png" />
+    <Content Include="Resources\Empty Recycle Bin 2000.ico" />
+    <None Include="Resources\Empty Recycle Bin 20001.ico" />
+    <None Include="Resources\Empty Recycle Bin 20002.ico" />
+    <None Include="Resources\Empty Recycle Bin 20003.ico" />
+    <None Include="Resources\Empty Recycle Bin 20004.ico" />
+    <Content Include="Resources\menu.png" />
+    <None Include="Resources\menu1.png" />
+    <None Include="Resources\menu2.png" />
+    <None Include="Resources\menu3.png" />
+    <None Include="Resources\menu4.png" />
+    <Content Include="Resources\salir.png" />
+    <None Include="Resources\salir1.png" />
+    <None Include="Resources\salir2.png" />
+    <None Include="Resources\salir3.png" />
+    <None Include="Resources\salir4.png" />
+    <Content Include="Resources\test.png" />
+    <None Include="Resources\test1.png" />
+    <None Include="Resources\test2.png" />
+    <None Include="Resources\test3.png" />
+    <None Include="Resources\test4.png" />
+    <Content Include="Resources\user.jpg" />
+    <None Include="Resources\user1.jpg" />
+    <None Include="Resources\user2.jpg" />
+    <None Include="Resources\user3.jpg" />
+    <None Include="Resources\user4.jpg" />
+    <Content Include="Resources\user_log.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
